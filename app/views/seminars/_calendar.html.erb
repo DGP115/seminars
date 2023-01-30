@@ -1,0 +1,11 @@
+
+
+<%= month_calendar(events: seminars, attribute: :start_date, end_attribute: :end_date) do |date, seminars| %>
+  <%= date.day %>
+
+  <% seminars.each do |seminar| %>
+    <div>
+      <%= link_to seminar.name, seminar_path(seminar)%>
+    </div>
+  <% end %>
+<% end %>

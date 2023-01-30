@@ -1,0 +1,23 @@
+
+  <div class="col-sm-6">
+
+    <div class="card shadow mb-2 mt-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= seminar.name %></h5>
+        <p class="lead"><%= truncate(seminar.description, length: 40) %></p>
+
+        <h6>From: <span class="badge badge--secondary">
+          <%= seminar.duration_expression %>
+        </span></h6>
+        <h6>Each day from: <span class="badge badge--secondary">
+          <%= seminar.daily_hours_expression %>
+        </span><h6>
+      </div>
+
+      <div class="card-body">
+        <%= link_to "Details", seminar_path(seminar), class: "btn btn--primary" %>
+      </div>
+    </div>
+
+  </div>
+

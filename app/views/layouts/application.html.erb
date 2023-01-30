@@ -13,7 +13,13 @@
   <body>
     <%= render 'layouts/navbar' %>
     <div class="container">
-      <%= yield %>
+      <div class="row row--alt">
+
+        <%= render 'shared/messages' %>
+
+        <%= yield %>
+
+      </div>
     </div>
   </body>
 </html>

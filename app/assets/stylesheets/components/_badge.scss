@@ -1,0 +1,30 @@
+.badge {
+  color: var(--color-text-body);
+  padding: var(--space-xxxs) var(--space-xxxs);
+  border-radius: var(--border-radius);
+  border: solid 2px transparent;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 2px;
+
+
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    transition: filter 250ms, color 200ms;
+  }
+
+  // Modifiers will go here
+
+  &--primary {
+    background-color: var(--color-badge-primary);
+  }
+
+  &--secondary {
+    background-color: var(--color-badge-secondary);
+  }
+
+}

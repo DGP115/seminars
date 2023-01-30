@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'pages#home'
   get 'about', to: 'pages#about'
+  get 'calendar', to: 'pages#calendar'
+
+  # Seminars
+  resources :seminars, only: %i[index show edit create update]
 end

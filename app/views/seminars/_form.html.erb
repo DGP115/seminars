@@ -1,0 +1,60 @@
+<div class="container row--alt justify-content-center">
+
+  <%= form_with(model: @seminar, local: true, class: "shadow p-3 mb-3 bg-grey rounded") do |f| %>
+
+    <div class="form-group row">
+      <%= f.label "Name:", class: "col-2 col-form-label" %>
+      <div class="col-8">
+        <%= f.text_field :name,  class: "form-control shadow rounded",
+                                  placeholder: "Enter a name" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label "Description:", class: "col-2 col-form-label" %>
+      <div class="col-8">
+        <%= f.text_area :description,  class: "form-control shadow rounded", placeholder: "Enter a detailed description" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= f.label "Start Date:", class: "col-2 col-form-label" %>
+      <div class="col-3">
+        <%= f.date_field :start_date,  class: "form-control shadow rounded" %>
+      </div>
+      <%= f.label "End Date:", class: "col-auto col-form-label" %>
+      <div class="col-3">
+        <%= f.date_field :end_date,  class: "form-control shadow rounded" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= f.label "Start Time:", class: "col-2 col-form-label" %>
+      <div class="col-3">
+        <%= f.text_field :start_time,  class: "form-control shadow rounded" %>
+      </div>
+      <%= f.label "End Time:", class: "col-auto col-form-label" %>
+      <div class="col-3">
+        <%= f.text_field :end_time,  class: "form-control shadow rounded" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= f.label "Total Seats:", class: "col-2 col-form-label" %>
+      <div class="col-2">
+        <%= f.number_field :total_seats,  class: "form-control shadow rounded" %>
+      </div>
+      <%= f.label "   Registration fee [$]:  ", class: "col-auto col-form-label" %>
+      <div class="col-2">
+        <%= f.number_field :registration_fee,  class: "form-control shadow rounded" %>
+      </div>
+    </div>
+
+    <div class="mt-2 text-center">
+     <%= f.submit %>
+    </div>
+
+  <% end %>
+
+</div>
+
+
