@@ -1,0 +1,30 @@
+<div class ="col-sm-10 mx-auto">
+  <div class="card-header">
+    <h3 class="card-title">Booking Confirmation:</h3>
+  </div>
+  <div class="card-body">
+    <h4>Duuude...Ese...</h4>
+    <h5>S'Up <%= @customer.full_name %>? You Dawg</h5>
+    <p class="lead">This is to confirm your booking for <strong><%= @seminar.name %></strong>
+    </p>
+    <hr>
+    <h4>The Deets:</h4>
+    <p>Number of tickets: <strong><%= @booking.ticket_qty %></strong></p>
+    <p>The paper: <strong><%= to_dollars(@booking.amount_paid) %></strong></p>
+    <div class="row mt-3">
+      <div class="col-sm-7">
+        <h5>From:
+          <span class="badge badge--secondary">
+            <%= @seminar.start_date.strftime('%a') %> <%= @seminar.duration_expression %>
+          </span>
+        </h5>
+        <h5>Hours:
+          <span class="badge badge--secondary">
+            <%= @seminar.daily_hours_expression %>
+          </span>
+        <h5>
+      </div>
+    </div>
+    <%= @svg.html_safe %>
+  </div>
+</div>

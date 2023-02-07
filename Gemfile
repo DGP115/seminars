@@ -46,8 +46,11 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 gem 'bootstrap'
+gem "bootstrap_form", "~> 5.1"
 
 gem 'simple_calendar', '~> 2.4', '>= 2.4.3'
+
+gem 'stripe', '~> 8.1'
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
@@ -56,6 +59,10 @@ gem 'simple_calendar', '~> 2.4', '>= 2.4.3'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # letter_opener allows you to preview emails sent from your app in a browser rather then actually sending them
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
+
+  gem 'rqrcode', '~> 2.1', '>= 2.1.2'
 end
 
 group :development do

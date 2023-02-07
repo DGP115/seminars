@@ -1,12 +1,15 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Workshop
+  # Model for App config loader, I think
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -17,6 +20,8 @@ module Workshop
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+
+    #  Uncomment this and have it point to app/services to that the stripe service is inialized
+    config.eager_load_paths << Rails.root.join('app/services')
   end
 end

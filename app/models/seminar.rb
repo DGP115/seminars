@@ -2,7 +2,7 @@
 
 # Model for Seminars
 class Seminar < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :customers, through: :bookings
 
   validates :name, :description, presence: true
@@ -10,6 +10,9 @@ class Seminar < ApplicationRecord
   validates :total_seats, :registration_fee, numericality: true, presence: true
   validates :end_date, comparison: { greater_than: :start_date,
                                      message: 'must be after Start Date' }
+
+  scope :upcoming_seminars, -> { where('start_date > ?', Date.today) }
+  scope :past_seminars, -> { where('end_date < ?', Date.today) }
 
   def duration_expression
     " #{start_date.strftime('%b-%d-%Y')} to #{end_date.strftime('%b-%d-%Y')}"
@@ -21,5 +24,17 @@ class Seminar < ApplicationRecord
 
   def daily_hours_expression
     " #{start_time} to #{end_time}, (#{daily_duration} hours)"
+  end
+
+  def underway?
+    start_date <= Date.today && end_date > Date.today
+  end
+
+  def over?
+    end_date < Date.today
+  end
+
+  def upcoming?
+    start_date > Date.today
   end
 end

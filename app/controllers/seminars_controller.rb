@@ -4,6 +4,8 @@
 class SeminarsController < ApplicationController
   def index
     @seminars = Seminar.all.order(created_at: :asc)
+    @upcoming_seminars = Seminar.upcoming_seminars.order(start_date: :ASC)
+    @past_seminars = Seminar.past_seminars.order(end_date: :DESC)
   end
 
   def show
@@ -21,6 +23,16 @@ class SeminarsController < ApplicationController
       redirect_to seminar_path(@seminar)
     else
       render 'new', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    set_seminar
+    if @seminar.destroy
+      flash[:notice] = 'The seminar was deleted successfully.'
+      redirect_to seminars_path
+    else
+      render 'edit', status: :unprocessable_entity
     end
   end
 

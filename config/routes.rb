@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   get 'calendar', to: 'pages#calendar'
 
   # Seminars
-  resources :seminars, only: %i[index show edit create update]
+  resources :seminars, only: %i[index show edit create update destroy]
+
+  # Bookings
+  resources :bookings, only: %i[create] do
+    get :booking_details, on: :member
+  end
 end

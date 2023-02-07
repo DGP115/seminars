@@ -59,6 +59,7 @@
     }
   }
 
+
   &--dark {
     color: var(--color-white);
     border-color: var(--color-dark);
@@ -69,6 +70,21 @@
     &:focus-within,
     &:active {
       color: var(--color-white);
+    }
+  }
+
+  &--caution {
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+    background-color: var(--color-caution);
+    border: solid 1px;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: var(--color-rotate);
+      filter: brightness(92%);
     }
   }
 }

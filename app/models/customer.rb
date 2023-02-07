@@ -2,7 +2,7 @@
 
 # Model for Customers
 class Customer < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :seminars, through: :bookings
 
   validates :full_name, :contact_number, :stripe_customer_id, presence: true

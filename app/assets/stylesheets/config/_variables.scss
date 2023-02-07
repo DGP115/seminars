@@ -19,7 +19,7 @@
   // Three different text colors
   --color-text-header: hsl(0, 1%, 16%);
   --color-text-body:   hsl(0, 5%, 25%);
-  --color-text-muted:  hsl(0, 1%, 44%);
+ --color-text-muted :  hsl(0, 1%, 44%);
 
   // Classical and robust spacing system
   --space-xxxs: 0.25rem; // 4px
@@ -43,6 +43,8 @@
     --color-glint:            hsl(210, 100%, 82%);
     --color-badge-primary:    hsl(210, 100%, 82%);
     --color-badge-secondary:  hsl(210, 67%, 91%);
+    --color-caution:          yellow;
+    --color-caution-rotate:   rgba(255, 255, 0, 0.465);
 
     // Neutral colors
     --color-white:      hsl(0, 0%, 100%);
