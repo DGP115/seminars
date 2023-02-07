@@ -52,6 +52,8 @@ gem 'simple_calendar', '~> 2.4', '>= 2.4.3'
 
 gem 'stripe', '~> 8.1'
 
+gem 'friendly_id', '~> 5.5'
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

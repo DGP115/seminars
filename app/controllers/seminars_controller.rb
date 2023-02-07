@@ -36,10 +36,24 @@ class SeminarsController < ApplicationController
     end
   end
 
+  def new
+    @seminar = Seminar.new
+  end
+
+  def create
+    @seminar = Seminar.new(whitelist_seminar_params)
+    if @seminar.save
+      flash[:notice] = "Seminar #{@seminar.name} was created successfully"
+      redirect_to seminar_path(@seminar)
+    else
+      render 'new', status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_seminar
-    @seminar = Seminar.find(params[:id])
+    @seminar = Seminar.friendly.find(params[:id])
   end
 
   def whitelist_seminar_params

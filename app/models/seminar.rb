@@ -11,6 +11,9 @@ class Seminar < ApplicationRecord
   validates :end_date, comparison: { greater_than: :start_date,
                                      message: 'must be after Start Date' }
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   scope :upcoming_seminars, -> { where('start_date > ?', Date.today) }
   scope :past_seminars, -> { where('end_date < ?', Date.today) }
 

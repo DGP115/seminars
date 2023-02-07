@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'calendar', to: 'pages#calendar'
 
   # Seminars
-  resources :seminars, only: %i[index show edit create update destroy]
+  resources :seminars, only: %i[index show edit create update destroy new]
 
   # Bookings
   resources :bookings, only: %i[create] do
